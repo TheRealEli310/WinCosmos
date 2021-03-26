@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C2FFBFC1-4242-4F78-BE1B-DC853A8C17B2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WinCosmos</RootNamespace>
+    <AssemblyName>WinCosmos</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\BinaryHelper.cs" />
+    <Compile Include="Common\ByteToString.cs" />
+    <Compile Include="Common\Extensions\ByteConverter.cs" />
+    <Compile Include="Common\Extensions\ToHexString.cs" />
+    <Compile Include="Common\NumberHelper.cs" />
+    <Compile Include="Common\StringHelper.cs" />
+    <Compile Include="Core\ACPI.cs" />
+    <Compile Include="Core\BaseIOGroups.cs" />
+    <Compile Include="Core\Bootstrap.cs" />
+    <Compile Include="Core\CPU.cs" />
+    <Compile Include="Core\GCImplementation.cs" />
+    <Compile Include="Core\Global.cs" />
+    <Compile Include="Core\INTs.cs" />
+    <Compile Include="Core\IOGroup\ATA.cs" />
+    <Compile Include="Core\IOGroup\COM.cs" />
+    <Compile Include="Core\IOGroup\IOGroup.cs" />
+    <Compile Include="Core\IOGroup\Keyboard.cs" />
+    <Compile Include="Core\IOGroup\Mouse.cs" />
+    <Compile Include="Core\IOGroup\Network\AMDPCNetIIIOGroup.cs" />
+    <Compile Include="Core\IOGroup\PCI.cs" />
+    <Compile Include="Core\IOGroup\PCSpeaker.cs" />
+    <Compile Include="Core\IOGroup\PIC.cs" />
+    <Compile Include="Core\IOGroup\PIT.cs" />
+    <Compile Include="Core\IOGroup\PS2Controller.cs" />
+    <Compile Include="Core\IOGroup\RTC.cs" />
+    <Compile Include="Core\IOGroup\TextScreen.cs" />
+    <Compile Include="Core\IOGroup\VBE.cs" />
+    <Compile Include="Core\IOGroup\VGA.cs" />
+    <Compile Include="Core\IOPort.cs" />
+    <Compile Include="Core\ManagedMemoryBlock.cs" />
+    <Compile Include="Core\MemoryBlock.cs" />
+    <Compile Include="Core\MemoryGroup\AHCI.cs" />
+    <Compile Include="Core\MemoryOperations.cs" />
+    <Compile Include="Core\Memory\Heap.cs" />
+    <Compile Include="Core\Memory\HeapLarge.cs" />
+    <Compile Include="Core\Memory\HeapMedium.cs" />
+    <Compile Include="Core\Memory\HeapSmall.cs" />
+    <Compile Include="Core\Memory\Old\DataLookupEntry.cs" />
+    <Compile Include="Core\Memory\Old\DataLookupTable.cs" />
+    <Compile Include="Core\Memory\Old\GlobalInformationTable.cs" />
+    <Compile Include="Core\Memory\Old\GlobalSystemInfo.cs" />
+    <Compile Include="Core\Memory\Old\Old_Heap.cs" />
+    <Compile Include="Core\Memory\RAT.cs" />
+    <Compile Include="Core\Multiboot.cs" />
+    <Compile Include="Core\PIC.cs" />
+    <Compile Include="Core\Plugs\GCImplementionImpl.cs" />
+    <Compile Include="Core\Plugs\MemoryOperations\MemoryOperationsImpl.cs" />
+    <Compile Include="Core\Plugs\RuntimeFieldHandleImpl.cs" />
+    <Compile Include="Core\Plugs\System\BufferImpl.cs" />
+    <Compile Include="Core\Plugs\System\CharUnicodeInfoImpl.cs" />
+    <Compile Include="Core\Plugs\System\Collections\Generic\ComparerHelpersImpl.cs" />
+    <Compile Include="Core\Plugs\System\DelegateImpl.cs" />
+    <Compile Include="Core\Plugs\System\Diagnostics\DebuggerImpl.cs" />
+    <Compile Include="Core\Plugs\System\Diagnostics\StopwatchImpl.cs" />
+    <Compile Include="Core\Plugs\System\EnvironmentImpl.cs" />
+    <Compile Include="Core\Plugs\System\EventHandlerImpl.cs" />
+    <Compile Include="Core\Plugs\System\ExceptionImpl.cs" />
+    <Compile Include="Core\Plugs\System\GCImpl.cs" />
+    <Compile Include="Core\Plugs\System\Globalization\CharUnicodeInfoImpl.cs" />
+    <Compile Include="Core\Plugs\System\Globalization\CultureInfoImpl.cs" />
+    <Compile Include="Core\Plugs\System\Globalization\NumberFormatInfoImpl.cs" />
+    <Compile Include="Core\Plugs\System\MulticastDelegateImpl.cs" />
+    <Compile Include="Core\Plugs\System\ObjectImpl.cs" />
+    <Compile Include="Core\Plugs\System\OutOfMemoryExceptionImpl.cs" />
+    <Compile Include="Core\Plugs\System\Resources\ResourceManagerImpl.cs" />
+    <Compile Include="Core\Plugs\System\RuntimeType.cs" />
+    <Compile Include="Core\Plugs\System\RuntimeType.RuntimeTypeCache.cs" />
+    <Compile Include="Core\Plugs\System\RuntimeTypeHandle.cs" />
+    <Compile Include="Core\Plugs\System\Runtime\CompilerServices\RuntimeHelpersImpl.cs" />
+    <Compile Include="Core\Plugs\System\Runtime\InteropServices\MarshalImpl.cs" />
+    <Compile Include="Core\Plugs\System\Runtime\InteropServices\SafeHandleImpl.cs" />
+    <Compile Include="Core\Plugs\System\SRImpl.cs" />
+    <Compile Include="Core\Plugs\System\Text\DecoderFallbackImpl.cs" />
+    <Compile Include="Core\Plugs\System\Text\EncoderFallbackImpl.cs" />
+    <Compile Include="Core\Plugs\System\Text\InternalDecoderBestFitFallbackBufferImpl.cs" />
+    <Compile Include="Core\Plugs\System\Text\InternalEncoderBestFitFallback.cs" />
+    <Compile Include="Core\Plugs\System\Threading\InterlockedImpl.cs" />
+    <Compile Include="Core\Plugs\System\Threading\MonitorImpl.cs" />
+    <Compile Include="Core\Plugs\System\Threading\TaskImpl.cs" />
+    <Compile Include="Core\Plugs\System\Threading\ThreadImpl.cs" />
+    <Compile Include="Debug\Kernel\ConsoleDebugger.cs" />
+    <Compile Include="Debug\Kernel\Debugger.cs" />
+    <Compile Include="HAL\BlockDevice\AHCI.cs" />
+    <Compile Include="HAL\BlockDevice\Ata.cs" />
+    <Compile Include="HAL\BlockDevice\AtaPio.cs" />
+    <Compile Include="HAL\BlockDevice\BlockDevice.cs" />
+    <Compile Include="HAL\BlockDevice\EBR.cs" />
+    <Compile Include="HAL\BlockDevice\GPT.cs" />
+    <Compile Include="HAL\BlockDevice\IDE.cs" />
+    <Compile Include="HAL\BlockDevice\MBR.cs" />
+    <Compile Include="HAL\BlockDevice\Partition.cs" />
+    <Compile Include="HAL\BlockDevice\Ports\Sata.cs" />
+    <Compile Include="HAL\BlockDevice\Ports\Satapi.cs" />
+    <Compile Include="HAL\BlockDevice\Ports\StoragePort.cs" />
+    <Compile Include="HAL\BlockDevice\Registers\AHCIRegs.cs" />
+    <Compile Include="HAL\Bootstrap.cs" />
+    <Compile Include="HAL\Device.cs" />
+    <Compile Include="HAL\Drivers\PCI\Network\AMDPCNetII.cs" />
+    <Compile Include="HAL\Drivers\PCI\Network\RTL8139.cs" />
+    <Compile Include="HAL\Drivers\PCI\Network\VT6102.cs" />
+    <Compile Include="HAL\Global.cs" />
+    <Compile Include="HAL\KeyboardBase.cs" />
+    <Compile Include="HAL\MouseBase.cs" />
+    <Compile Include="HAL\NetworkDevice.cs" />
+    <Compile Include="HAL\Network\MACAddress.cs" />
+    <Compile Include="HAL\Network\NetworkInit.cs" />
+    <Compile Include="HAL\PS2Controller.cs" />
+    <Compile Include="HAL\PS2Keyboard.cs" />
+    <Compile Include="HAL\PS2Mouse.cs" />
+    <Compile Include="HAL\PCI.cs" />
+    <Compile Include="HAL\PCIDevice.cs" />
+    <Compile Include="HAL\PCIDeviceBridge.cs" />
+    <Compile Include="HAL\PCIDeviceCardbus.cs" />
+    <Compile Include="HAL\PCIDeviceNormal.cs" />
+    <Compile Include="HAL\PIT.cs" />
+    <Compile Include="HAL\TextScreen.cs" />
+    <Compile Include="HAL\TextScreenBase.cs" />
+    <Compile Include="HAL\TextScreenHelpers.cs" />
+    <Compile Include="System\Global.cs" />
+    <Compile Include="System\Kernel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="System\Keyboard\ConsoleKeyEx.cs" />
+    <Compile Include="System\Keyboard\ConsoleKeyExExtensions.cs" />
+    <Compile Include="System\Keyboard\KeyboardManager.cs" />
+    <Compile Include="System\Keyboard\KeyEvent.cs" />
+    <Compile Include="System\Keyboard\KeyMapping.cs" />
+    <Compile Include="System\Keyboard\ScanMapBase.cs" />
+    <Compile Include="System\Keyboard\ScanMaps\DE_Standard.cs" />
+    <Compile Include="System\Keyboard\ScanMaps\FR_Standard.cs" />
+    <Compile Include="System\Keyboard\ScanMaps\TR_StandardQ.cs" />
+    <Compile Include="System\Keyboard\ScanMaps\US_Standard.cs" />
+    <Compile Include="System\Power.cs" />
+    <Compile Include="System\Text\CosmosEncodingProvider.cs" />
+    <Compile Include="System\Text\CP437Encoding.cs" />
+    <Compile Include="System\Text\CP858Encoding.cs" />
+    <Compile Include="System\Text\EncodingTable.cs" />
+    <Compile Include="System\Text\SingleByteEncoding.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
