@@ -11,7 +11,8 @@ namespace Cosmos.System
     {
         public static void Reboot()
         {
-            Process.Start(Environment.CommandLine);
+            var info = new ProcessStartInfo(Environment.GetCommandLineArgs()[0]);
+            Process.Start(info);
             Environment.Exit(0);
         }
         public static void Shutdown()

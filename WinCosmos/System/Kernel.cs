@@ -98,10 +98,6 @@ namespace Cosmos.System
         {
             mStopped = true;
         }
-        public Kernel()
-        {
-            Global.mDebugger.Send("In Cosmos.System.Kernel..ctor");
-        }
         public void Restart()
         {
             mStarted = false;
