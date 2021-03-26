@@ -13,11 +13,7 @@ namespace TestApp
         static void Main(string[] args)
         {
             Kernel kernel = new Kernel();
-            kernel.Boot();
-        }
-        public void Boot()
-        {
-            base.Start();
+            kernel.Start();
         }
         protected override void AfterRun()
         {
@@ -33,7 +29,6 @@ namespace TestApp
             Console.Write("Input: ");
             var input = Console.ReadLine();
             Console.Write("Text typed: ");
-            Sys.Power.Shutdown();
             Console.WriteLine(input);
         }
     }
